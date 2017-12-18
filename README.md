@@ -4,7 +4,7 @@
 BlaB! WS G is a PhoneGap app (Android/IOS) for [BlaB! WS](https://justblab.com) and [BlaB! WS Pro](https://justblab.com) websocket chats. Your website visitors simply enter a chat code **once** and then join the chat. The app allows you to have native sound notifications via the PhoneGap media plugin - playing audio/video automatically is disabled in mobile browsers. The back button triggers a prompt to exit the app.
 
 ![Alt text](/bwsg.png "void")
-![Alt text](/bwsgs.png "void")
+![Alt text](/bwsge.png "void")
 
 ## Chat code
 
