@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head><title>...</title>
+<meta charset="utf-8" />
+</head>
+<body>
+
+<div id="splashscreen" style="position:fixed;left:0px;top:0px;width:100%;height:100%">
+<img src="blabws.svg" style="position:fixed;top:15%;left:15%;width:70%;height:70%" alt="" /></div>
+
+<div id="inputfields" style="position:fixed;padding:10px;bottom:10%;left:0;right:0;text-align:center;background-color:#fff;display:none">
+<form action="#" method="post" onsubmit="go2url();return false">
+<input type="text"   style="font-size:20px;box-sizing:border-box;padding:20px;width:80%;text-align:center;margin:2px;border-width:0;color:#000;background-color:#eee" id="inputurl" value="" placeholder="ENTER CHAT CODE" />
+<input type="submit" style="font-size:20px;box-sizing:border-box;padding:20px;width:80%;text-align:center;margin:2px;border-width:0;color:#fff;background-color:#08a"  value="OKAY" />
+</div>
+
+<iframe id="blabwsiframe" src="" style="position:fixed;left:0px;top:0px;width:100%;height:100%;border-width:0;overflow:hidden;display:none"></iframe>
+
+<div id="closeappscreen" onclick="cancel_exit()" style="position:fixed;left:0px;top:0px;width:100%;height:100%;background-color:#000;opacity:0.7;display:none"></div>
+<div id="closeappbutton" onclick="navigator.app.exitApp()" style="padding-top:20px;padding-bottom:20px;text-align:center;font-weight:bold;position:fixed;left:1%;bottom:5px;right:1%;color:#fff;background-color:#E91E63;border-radius:5px;display:none">EXIT</div>
+
+<script src="cordova.js"></script>
+
+<script>
+
+url='';
+
+s_screen=document.getElementById('splashscreen');
+b_screen=document.getElementById('blabwsiframe');
+h_screen=document.getElementById('closeappscreen');
+c_screen=document.getElementById('closeappbutton');
+
+document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady(){
+document.addEventListener('backbutton', ask_exit, false);
+window.addEventListener('message',function(event){if(!isNaN(event.data)){play_s(event.data)}else{createCookie('bwsurl',url,365);}},false)}
+
+function load_blabws(){
+s_screen.style.display='none';
+b_screen.style.display='block';
+b_screen.src=url;}
+
+function ask_exit(){
+if(typeof wait2exit=='number'){clearTimeout(wait2exit);}
+h_screen.style.display='block';
+c_screen.style.display='block';
+wait2exit=setTimeout('cancel_exit()',3000)}
+
+function cancel_exit(){
+h_screen.style.display='none';
+c_screen.style.display='none';}
+
+function pgpath(){
+path=window.location.pathname;
+path=path.substr( path,path.length-10)
+if(device.platform=='Android'){path='file://'+path}
+return path}
+
+function play_s(x){
+if(x>0){ 
+switch(x){
+case 2: y='2.mp3';break;
+case 3: y='3.mp3';break;
+case 4: y='4.mp3';break;
+default:y='1.mp3';break}
+z=pgpath();z=z+y;
+mp3s=new Media(z);
+mp3s.play()}}
+
+function createCookie(name,value,days) {
+if(!already_in){var date = new Date();
+date.setTime(date.getTime() + (days*24*60*60*1000));
+expires = "; expires=" + date.toUTCString();
+document.cookie = name + "=" + value + expires + "; path=/";}}
+
+function readCookie(name) {
+var nameEQ = name + "=";
+var ca = document.cookie.split(';');
+for(var i=0;i < ca.length;i++) {var c = ca[i];
+while (c.charAt(0)==' ') c = c.substring(1,c.length);
+if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);}
+return null}
+
+function go2url(){
+inpt=document.getElementById('inputurl');
+if(!inpt.value.match(/^[0-9A-z]+$/) || inpt.value.length<5){
+inpt.value='Invalid chat code!';setTimeout("inpt.value=''",800);return}
+
+else{
+url='https://goo.gl/'+inpt.value;
+document.getElementById('inputfields').style.display='none';
+load_blabws();}}
+
+already_in=readCookie('bwsurl');
+
+if(already_in){url=already_in;load_blabws()}
+else{document.getElementById('inputfields').style.display='block'}
+	
+</script>
+</body></html>
