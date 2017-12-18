@@ -11,7 +11,7 @@ BlaB! WS G is a PhoneGap app (Android/IOS) for [BlaB! WS](https://justblab.com) 
 The chat code is the unique part of a `goo.gl` shortened URL of your BlaB! WS or BlaB! WS Pro URL ending with `?mobileapp=3`
 
 * Create a goo.gl short link from `https://yourchat.com/chat/index.php?mobileapp=3`
-* If the result is `goo.gl/D6FR7e` then the chat code **D6FR7e**
+* If the result is `goo.gl/D6FR7e` then the chat code is **D6FR7e**
 * `mobileapp=3` triggers a callback function that remembers the code in the app.
 
 ## Permissions
