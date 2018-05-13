@@ -25,5 +25,5 @@ MIT
 ## Links
 
 * Website: https://justblab.com
-* GitHub: https://github.com/uuencode/BlaB-WS-G
+* GitHub: https://github.com/uuencode/BlaB-G
 * Google Play: https://play.google.com/store/apps/details?id=com.justblab.bwsg`
