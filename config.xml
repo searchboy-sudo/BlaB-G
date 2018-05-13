@@ -2,10 +2,10 @@
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "com.justblab.bwsg"
-        versionCode = "2"
-        version     = "1.0.2">
+        versionCode = "3"
+        version     = "1.0.3">
 
-<name>BlaB! WS G</name>
+<name>BlaB! G</name>
 <description>Chat app for BlaB! WS and BlaB! WS Pro.</description>
 <author href="https://justblab.com" email="justblabcom@gmail.com">BlaB Team</author>
 
