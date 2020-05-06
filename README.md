@@ -8,11 +8,10 @@ BlaB! G is a PhoneGap app (Android/IOS) for [BlaB! AX](https://justblab.com), [B
 
 ## Chat code
 
-The chat code is the unique part of a `bit.ly` shortened URL of your BlaB! WS or BlaB! WS Pro URL ending with `?mobileapp=3`
+The chat code is the unique part of a `bit.ly` shortened URL`
 
-* Create a bit.ly short link from `https://yourchat.com/chat/index.php?mobileapp=3`
+* The exact link that must be shortened can be copied from YourChat » AdminCP » Settings » General » Android Apps
 * If the result is `bit.ly/2rC9gza` then the chat code **2rC9gza**
-* `mobileapp=3` triggers a callback function that remembers the code in the app.
 
 ## Permissions
 
